@@ -1,0 +1,4 @@
+cn\hankchan\webchats\api\message\MessageAPIs.class
+cn\hankchan\webchats\api\result\APIResult.class
+cn\hankchan\webchats\api\account\AccountAPIs.class
+cn\hankchan\webchats\api\user\UserAPIs.class

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="dataRepository" class="cn.hankchan.dao.mybatis.DataRepository" init-method="init">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+		
+	<!-- 读取数据库配置文件 -->
+	<context:property-placeholder location="classpath:config/database/db.properties"/>
+	<!-- dbcp 数据源  ==success  -->
+ 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${DB_DRIVER}"></property>
+		<property name="url" value="${DB_URL}"></property>
+		<property name="username" value="${DB_USERNAME}"></property>
+		<property name="password" value="${DB_PASSWORD}"></property>
+	</bean>
+	<!-- c3p0 数据源 ==success
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${DB_DRIVER}"></property>
+		<property name="jdbcUrl" value="${DB_URL}"></property>
+		<property name="user" value="${DB_USERNAME}"></property>
+		<property name="password" value="${DB_PASSWORD}"></property>
+	</bean> -->	
+		
+</beans>

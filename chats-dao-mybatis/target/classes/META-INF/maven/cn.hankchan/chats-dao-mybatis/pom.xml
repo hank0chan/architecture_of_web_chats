@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>chats-dao-mybatis</artifactId>
+  <name>chats-dao-mybatis</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+	    <!-- mybatis核心包 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis</artifactId>  
+        </dependency>  
+        <dependency>
+	    	<groupId>cn.hankchan</groupId>
+	    	<artifactId>chats-data</artifactId>
+    	</dependency>
+  </dependencies>
+  <build>
+    <finalName>chats-dao-mybatis</finalName>
+  </build>
+  <parent>
+  	<groupId>cn.hankchan</groupId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<artifactId>chats-parent</artifactId>
+  </parent>
+</project>

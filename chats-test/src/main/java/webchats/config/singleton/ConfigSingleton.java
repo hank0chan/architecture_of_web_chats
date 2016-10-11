@@ -10,7 +10,7 @@ import java.util.List;
  * @version 创建时间: 11 Oct 2016 14:19:33
  * <p>类说明:
  */
-public class ConfigSingleton {
+public class ConfigSingleton implements GlobalSingleton {
 
 	/** 配置信息 */
 	public List<ConfigEntity> lists = null;
@@ -33,6 +33,7 @@ public class ConfigSingleton {
 	}
 	
 	/** 提供重新加载文件的方法（可以创建一个全局单例模式接口，并且提供该方法由子类实现，如此达到动态加载的目的） */
+	@Override
 	public void reloadData() {
 		lists.clear();
 		loadData();
@@ -42,4 +43,5 @@ public class ConfigSingleton {
 	public void loadData() {
 		//TODO 具体实现，略
 	}
+
 }
